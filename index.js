@@ -10,20 +10,24 @@ app.get("/", (req, res) =>{
 });
 
 app.get("/about", (req, res) =>{
-    res.write(JSON.stringify({
+    res.json({
         'Status': 'success',
         'Message': 'response success',
         'Description': 'Exercise #3',
         'Date': moment().format(),
         'Data': member.data()
-    }));
+    });
     res.end();
 });
 
 app.get("/users", (req, res) =>{
-    res.write(JSON.stringify(
+    // res.write(JSON.stringify(
+    //     user.user()
+    // ))
+    // res.end();
+    res.json(
         user.user()
-    ))
+    );
     res.end();
 })
 
